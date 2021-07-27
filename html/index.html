@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="" />
+        <meta property="og:description" content="" />
+        <meta content="" property="og:title" />
+        <meta property="og:image" content="" />
+        <meta property="og:url" content="" />
+        <meta name="google-site-verification" content="" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>소나큐브 세팅</title>
+        <link rel="shortcut icon" type="image/ico" href="../../resources/images/common/favicon.ico" />
+        <link rel="stylesheet" href="../resource/css/reset.css" type="text/css" />
+        <link rel="stylesheet" href="../resource/css/font.css" type="text/css" />
+        <link rel="stylesheet" href="../resource/css/common.css" type="text/css" />
+
+        <script src="../resource/js/jquery-1.11.2.js"></script>
+        <script src="../resource/js/common.js"></script>
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="container">
+                <div class="section">
+                    <h1>1. 설치 방법</h1>
+                    <div class="down">
+                        <h2>소나큐브 설치</h2>
+                        <a href="https://www.sonarqube.org/downloads/" target="_blank">https://www.sonarqube.org/downloads/</a>
+                        <figure><img src="../resource/images/download.jpg" alt="" /></figure>
+                        <p><span>Community</span>에 있는 <span>Download for free</span> 클릭</p>
+                    </div>
+                    <div class="down">
+                        <h2>소나스캐너 설치</h2>
+                        <a href="https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/" target="_blank">https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/</a>
+                        <figure><img src="../resource/images/scanner.jpg" alt="" /></figure>
+                        <p><span>Windows 64-bit</span> 설치</p>
+                    </div>
+                    <div class="down">
+                        <h2>JDK 설치</h2>
+                        <a href="https://www.oracle.com/kr/java/technologies/javase-jdk11-downloads.html" target="_blank">https://www.oracle.com/kr/java/technologies/javase-jdk11-downloads.html</a>
+                        <figure><img src="../resource/images/jdk.jpg" alt="" /></figure>
+                        <p><span>jdk-11.0.12_windows-x64_bin.exe</span> 설치</p>
+                    </div>
+
+                    <h1 class="m_t30">2. 세팅 방법</h1>
+                    <ol>
+                        <li>
+                            <p>1. <span>C드라이브</span>에 소나큐브 압축을 푼 뒤 <span>'bin' 폴더 > 'windows-x86-64' 폴더</span>로 들어가줍니다.</p>
+                        </li>
+                        <li>
+                            <figure><img src="../resource/images/startsonar.jpg" alt="" /></figure>
+                            <p>2. 'windows-x86-64' 폴더 안에서 터미널을 실행 시킨 후 <span>StartSonar.bat</span>을 입력 해줍니다.</p>
+                        </li>
+                        <li>
+                            <figure><img src="../resource/images/startsonar2.jpg" alt="" /></figure>
+                            <p>3. 위 이미지와 같이 프로세스가 뜨면 웹 브라우저에서 <span>localhost:9000</span>을 입력 해 접속합니다.</p>
+                        </li>
+                        <li>
+                            <figure><img src="../resource/images/login.jpg" alt="" /></figure>
+                            <p>4. 접속하면 로그인창이 나오는데, 초기 계정 정보는 <span>admin / admin</span> 이며 비밀번호는 변경 할 수 있습니다.</p>
+                        </li>
+                        <li>
+                            <figure><img src="../resource/images/menu.jpg" alt="" /></figure>
+                            <p>5. 로그인 하면 위 이미지와 같은 화면이 나오는데, 여기서 <span>Manually</span>를 눌러줍니다.</p>
+                        </li>
+                        <li>
+                            <figure><img src="../resource/images/key.jpg" alt="" /></figure>
+                            <p>6. 프로젝트 이름과 키 값을 적어줍니다. <span>프로젝트 키 값은 프로퍼티에 적어줘야 하기 때문에 잊어버리시면 안돼요!!!!!</span></p>
+                        </li>
+                        <li>
+                            <figure><img src="../resource/images/scanner2.jpg" alt="" /></figure>
+                            <p>7. 소나스캐너를 <span>작업하시는 폴더</span>에다 압축을 풀어주시고, <span>같은 폴더</span>에 sonar-project.properties 파일을 생성해줍니다.</p>
+                        </li>
+                        <li>
+                            <figure><img src="../resource/images/properties.jpg" alt="" /></figure>
+                            <p>8. sonar-project.properties 파일안에 값을 넣어줍니다.</p>
+                            <p class="p_l15">
+                                sonar.projectKey는 6번에서 만든 키 값을 넣어주고, <br />
+                                sonar.password는 변경하신 비밀번호를 넣어주시면 됩니다. <br />
+                                sonar.exclusions는 특정 경로나 파일을 예외 처리 할 수 있습니다. <br />
+                                여러 개 예외 처리하려면 콤마(,)로 구분하고 앞뒤로 쌍따옴표(")를 붙여줍니다.
+                            </p>
+                            <a href="https://docs.sonarqube.org/latest/project-administration/narrowing-the-focus/" target="_blank" class="m_t10"><span>> 사용 가이드</span></a>
+                        </li>
+                        <li>
+                            <figure><img src="../resource/images/bash.jpg" alt="" /></figure>
+                            <p>9. <span>작업하시는 폴더</span>에서 마우스 우클릭 후 <span>git Bash Here</span>를 눌러줍니다.</p>
+                        </li>
+                        <li>
+                            <figure><img src="../resource/images/bash2.jpg" alt="" /></figure>
+                            <p>10. 터미널이 열리면 <span>./sonar-scanner/bin/sonar-scanner.bat</span> 를 입력합니다.</p>
+                        </li>
+                        <li>
+                            <figure><img src="../resource/images/project1.jpg" alt="" /></figure>
+                            <p>11. 입력한 후 접속했던 localhost:9000을 새로고침 하시면 전체 프로젝트의 상태가 나옵니다.</p>
+                        </li>
+                        <li>
+                            <figure><img src="../resource/images/project2.jpg" alt="" /></figure>
+                            <p>12. 프로젝트의 상세 내용이며 숫자를 클릭하시면 프로젝트의 이슈 상태를 볼 수 있습니다.</p>
+                        </li>
+                        <li>
+                            <figure><img src="../resource/images/project3.png" alt="" /></figure>
+                            <p>13. 프로젝트의 이슈 상태이며 여기 나온 가이드를 참고해서 수정하시면 됩니다.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
